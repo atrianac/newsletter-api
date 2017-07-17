@@ -2,7 +2,7 @@ package com.springernature.newsletter.controller
 
 import com.springernature.newsletter.model.Subscriber
 import com.springernature.newsletter.repository.SubscriberRepository
-import com.springernature.newsletter.service.ICategoryService
+import com.springernature.newsletter.service.ICategoriesService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.BindingResult
@@ -14,7 +14,7 @@ import javax.validation.Valid
 import javax.validation.ValidatorFactory
 
 @RestController
-class SubscriberController(val subscriberRepository: SubscriberRepository, val categoryService: ICategoryService) {
+class SubscriberController(val subscriberRepository: SubscriberRepository, val categoryService: ICategoriesService) {
 
     @RequestMapping(path = arrayOf("/subscribers"), method = arrayOf(RequestMethod.GET))
     fun list() = subscriberRepository.findAll()

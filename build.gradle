@@ -26,6 +26,12 @@ repositories {
     jcenter()
 }
 
+kotlin {
+    experimental {
+        coroutines 'enable'
+    }
+}
+
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
     compile 'org.springframework.boot:spring-boot-starter-web'
@@ -34,6 +40,7 @@ dependencies {
     compile 'io.javaslang:javaslang:2.0.6'
     compile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.0.0'
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.8.7"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.16"
     testCompile 'junit:junit'
 }
 
