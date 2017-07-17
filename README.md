@@ -37,3 +37,14 @@ Endpoint   3. Handle   subscriber   submissions,   a   subscriber   has   an   e
 Endpoint   4. Return   a   list   of   “newsletters”,   each   newsletter   relates   to   a   subscriber,   a newsletter   has   a   recipient   address   (the   subscriber's   email)   and   a   list   of   notifications,   each notification   contains   the   name   of   a   book   and   a   list   of categoryPaths for   it,   a   categoryPath   is   a list   that   shows the relation of the books' category and the category for which is interested
 
 `GET /newsletters`
+
+ ## Architecture Summary
+
+The application exposes a classic three layers style:
+1.	The web layer (controllers).
+2.	The service layer.
+3.	The repository layer.
+
+The components and relationships are showed in the diagram below: 
+
+![Architecture](https://github.com/atrianac/newsletter-api/documentation/resources/newsletter-architecture.png)
