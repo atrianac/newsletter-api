@@ -1,5 +1,5 @@
 package com.springernature.newsletter.model
 
-import javaslang.collection.List
+import org.springframework.data.annotation.Id
 
-data class Book(val title: String, val categories: List<Category>)
+data class Book(@Id val title: String, val categoryCodes: List<String>)
