@@ -1,0 +1,302 @@
+{
+	"variables": [],
+	"info": {
+		"name": "newsletter-api",
+		"_postman_id": "65d6633d-519a-1882-49dc-46cf4e4b1a3a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Categories",
+			"request": {
+				"url": "http://localhost:8080/categories",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"CS\",\n    \"title\": \"Computer Science\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Categories - Science",
+			"request": {
+				"url": "http://localhost:8080/categories",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"sc\",\n    \"title\": \"science\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Categories - Enginieering",
+			"request": {
+				"url": "http://localhost:8080/categories",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"en\",\n    \"title\": \"engineering\",\n    \"superCategoryCode\": \"sc\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Categories - Software",
+			"request": {
+				"url": "http://localhost:8080/categories",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"sf\",\n    \"title\": \"software\",\n    \"superCategoryCode\": \"en\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Categories - Functional Programming",
+			"request": {
+				"url": "http://localhost:8080/categories",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"fp\",\n    \"title\": \"functional_programming\",\n    \"superCategoryCode\": \"sf\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Categories - Object Oriented Programming",
+			"request": {
+				"url": "http://localhost:8080/categories",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"ob\",\n    \"title\": \"object_oriented_programming\",\n    \"superCategoryCode\": \"sf\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books",
+			"request": {
+				"url": "http://localhost:8080/books",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"title\": \"Funcional Programming in Scala\",\n\t\"categoryCodes\": [\n\t\t\"CS\"\n\t]\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Books",
+			"request": {
+				"url": "http://localhost:8080/books",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"title\": \"Funcional Programming in Scala\",\n\t\"categoryCodes\": [\n\t\t\"fp\",\n\t\t\"ob\"\n\t]\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Books - 2",
+			"request": {
+				"url": "http://localhost:8080/books",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"title\": \"Funcional Programming in JavaScript\",\n\t\"categoryCodes\": [\n\t\t\"fp\",\n\t\t\"ob\"\n\t]\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Subscribers",
+			"request": {
+				"url": "http://localhost:8080/subscribers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Subscribers",
+			"request": {
+				"url": "http://localhost:8080/subscribers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"atriana@gmail.com\",\n    \"categoryCodes\": [\n    \t\"en\"\t\n    ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Subscribers - 2",
+			"request": {
+				"url": "http://localhost:8080/subscribers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"atriana@outlook.com\",\n    \"categoryCodes\": [\n    \t\"en\"\t\n    ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Newsletters",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/newsletters?email=atriana@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"newsletters"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "atriana@gmail.com",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Newsletters 2",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/newsletters?email=atriana@outlook.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"newsletters"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "atriana@outlook.com",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
