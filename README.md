@@ -47,4 +47,4 @@ The application exposes a classic three layers style:
 
 The components and relationships are showed in the diagram below: 
 
-![Architecture](https://github.com/atrianac/newsletter-api/documentation/resources/newsletter-architecture.png)
+![Architecture](https://github.com/atrianac/newsletter-api/blob/master/documentation/resources/newsletter-architecture.png)
