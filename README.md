@@ -18,7 +18,7 @@
  ## Testing the Endpoints
  
  1. Install Postman as is described in [Postman Installation and updates](https://www.getpostman.com/docs/postman/launching_postman/installation_and_updates)
- 2. Import the `endpoints.xml` collection as is described in [Postman Sharing collections](https://www.getpostman.com/docs/postman/collections/sharing_collections)
+ 2. Import the `newsletter-api.postman_collection` collection as is described in [Postman Sharing collections](https://www.getpostman.com/docs/postman/collections/sharing_collections)
  3. Execute the endpoints according to below description:
  
 
