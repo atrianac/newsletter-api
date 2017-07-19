@@ -37,6 +37,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
     compile 'org.springframework.boot:spring-boot-starter-validation'
+    compile 'org.springframework.boot:spring-boot-starter-test'
     compile 'io.javaslang:javaslang:2.0.6'
     compile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:2.0.0'
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.8.7"
