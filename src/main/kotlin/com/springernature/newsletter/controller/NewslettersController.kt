@@ -15,8 +15,5 @@ class NewslettersController(val newsletterService: INewslettersService) {
 
     @RequestMapping(path = arrayOf("/newsletters"))
     @JsonView(Api::class)
-    fun find(@Valid @Email @RequestParam (value = "email", required = true) email: String) : Newsletter  {
-        return newsletterService.findNewslettersByEmail(email)
-    }
-
+    fun find(@Valid @Email @RequestParam (value = "email", required = true) email: String) = newsletterService.findNewslettersByEmail(email)
 }

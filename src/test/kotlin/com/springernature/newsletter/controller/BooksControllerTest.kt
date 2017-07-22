@@ -1,7 +1,6 @@
-package com.springernature.newsletter
+package com.springernature.newsletter.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.springernature.newsletter.controller.BooksController
 import com.springernature.newsletter.model.Book
 import com.springernature.newsletter.repository.BookRepository
 import com.springernature.newsletter.service.IBooksService
