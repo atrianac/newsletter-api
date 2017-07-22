@@ -2,13 +2,13 @@ package com.springernature.newsletter.controller
 
 import com.springernature.newsletter.model.Category
 import com.springernature.newsletter.repository.CategoryRepository
-import com.springernature.newsletter.service.CategoriesService
+import com.springernature.newsletter.service.ICategoriesService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class CategoriesController(val categoryRepository: CategoryRepository, val categoryService: CategoriesService) {
+class CategoriesController(val categoryRepository: CategoryRepository, val categoryService: ICategoriesService) {
 
     @RequestMapping(path = arrayOf("/categories"), method = arrayOf(RequestMethod.GET))
     fun list() = categoryRepository.findAll()
