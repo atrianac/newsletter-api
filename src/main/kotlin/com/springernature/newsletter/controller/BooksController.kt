@@ -17,8 +17,8 @@ class BooksController(val bookRepository: BookRepository, val categoryService: I
     @RequestMapping(path = arrayOf("/books"), method = arrayOf(RequestMethod.POST))
     fun create(@RequestBody book: Book) : ResponseEntity<Book> =
          if(categoryService.categoriesAreValid(book.categoryCodes))
-            if (bookRepository.exists(book.title)) ResponseEntity(bookService.createBook(book), HttpStatus.OK)
-            else ResponseEntity(bookService.createBook(book), HttpStatus.CREATED)
+            if (bookRepository.exists(book.title)) ResponseEntity(bookService.createBook(book).first, HttpStatus.OK)
+            else ResponseEntity(bookService.createBook(book).first, HttpStatus.CREATED)
          else ResponseEntity(HttpStatus.BAD_REQUEST)
 
 }
