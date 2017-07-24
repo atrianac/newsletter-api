@@ -2,22 +2,26 @@ package com.springernature.newsletter.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.springernature.newsletter.model.Book
+import com.springernature.newsletter.model.Notification
 import com.springernature.newsletter.repository.BookRepository
 import com.springernature.newsletter.service.IBooksService
 import com.springernature.newsletter.service.ICategoriesService
+import kotlinx.coroutines.experimental.CommonPool
+import kotlinx.coroutines.experimental.Deferred
+import kotlinx.coroutines.experimental.async
 import org.junit.*
 import org.junit.runner.*
 import org.springframework.boot.test.autoconfigure.web.servlet.*
 import org.springframework.boot.test.mock.mockito.*
 import org.hamcrest.core.Is
-import  org.mockito.BDDMockito.*;
+import org.mockito.BDDMockito.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.json.JacksonTester
 import org.springframework.http.MediaType
 import org.springframework.test.context.junit4.*
 import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 
 @RunWith(SpringRunner::class)
 @WebMvcTest(BooksController::class)
@@ -59,14 +63,17 @@ class BooksControllerTest {
 
     @Test
     fun testCreate() {
+
         given(categoryService.categoriesAreValid(listOf())).willReturn(true)
-        given(bookService.createBook(book)).willReturn(book)
+        given(bookService.createBook(book)).willReturn(Pair(book, notification))
 
 
         mvc.perform(post("/books").contentType(MediaType.APPLICATION_JSON_UTF8).content(bookJson.write(book).json))
                 .andExpect(status().isCreated)
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
     }
+
+    val notification = async(CommonPool) { Notification(book.title, listOf(book.categoryCodes), book.categoryCodes) }
 
     @Test
     fun testCreateNotValidCategories() {

@@ -22,7 +22,7 @@ interface INewslettersService {
 }
 
 @Service
-class NewslettersService(val notificationRepository: NotificationRepository, val categoryService: ICategoriesService,
+open class NewslettersService(val notificationRepository: NotificationRepository, val categoryService: ICategoriesService,
                          val subscriberRepository: SubscriberRepository, val notificationCustomRepository: INotificationCustomRepository) : INewslettersService {
 
     override fun createNotificationForBook(book: Book) = async(CommonPool)  {
