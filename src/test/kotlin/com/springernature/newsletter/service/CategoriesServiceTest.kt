@@ -61,5 +61,4 @@ class CategoriesServiceTest {
                 Category("ob", "Object Oriented programming", "sf")
         )
     }
-
 }
